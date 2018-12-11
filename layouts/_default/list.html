@@ -1,0 +1,17 @@
+{{ partial "head" . }}
+{{ partial "header" . }}
+<main>
+  {{ if .Pages }}
+  <h1>これまで書いた記事</h1>
+  {{ end }}
+  
+  {{ .Content }}
+  <ol class='article-list'>
+    {{ range .Pages }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a><br /><span class="date">{{ .Date.Format "January 02, 2006" }}</span></li>
+    {{ end }}
+  </ol>
+</main>
+
+{{ partial "footer" . }}

@@ -1,0 +1,38 @@
+<div id="navFloat" class="nav-float">
+  <nav>
+    <ul>
+      <li><a href="/about/">ABOUT</a></li>
+      <li><a href="/post/">ARCHIVES</a></li>
+      <li><a href="/">HOME</a></li>
+      <li class="nav-close"><a href="#" id="closeNav">CLOSE MENU</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="nav-open"><a href="#" id="openNav">MENU</a></div>
+<footer>
+  <div class="mark">
+    <a href="//umeru.ma" target="_blank" class="copyright">©umeruma</a>
+  </div>
+</footer>
+
+<script>
+  let menu = document.getElementById("navFloat");
+  let btnMenuOpen = document.getElementById("openNav");
+  let btnMenuClose = document.getElementById("closeNav");
+
+  let openMenu = function (event) {
+    event.preventDefault();
+    menu.classList.add('nav-float-active');
+  }
+  let closeMenu = function (event) {
+    event.preventDefault();
+    menu.classList.remove('nav-float-active');
+  }
+
+  // btnMenuOpen.addEventListener('touchstart', openMenu);
+  btnMenuOpen.addEventListener('click', openMenu);
+
+  // btnMenuClose.addEventListener('touchstart', closeMenu);
+  btnMenuClose.addEventListener('click', closeMenu);
+</script>
+</body>

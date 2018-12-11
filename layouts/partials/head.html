@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover'>
+<meta name='format-detection' content='telephone=no'/>
+
+<title>{{ .Title }} | {{ .Site.Title }} </title>
+<meta name='description' content='{{- with .Description -}}
+{{- . -}}
+{{- else -}}
+{{- if .IsPage -}}
+  {{- .Summary -}}
+{{- else -}}
+  {{- with .Site.Params.info.description -}}
+    {{- . -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}'>
+
+<meta name="twitter:card" content="summary" />
+<meta name="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
+<meta name="og:description" content="{{- with .Description -}}
+{{- . -}}
+{{- else -}}
+{{- if .IsPage -}}
+  {{- .Summary -}}
+{{- else -}}
+  {{- with .Site.Params.info.description -}}
+    {{- . -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}" />
+
+{{ $twitterCardImg := resources.Get "img/card.png" }}
+<meta name="og:image" content="{{ $twitterCardImg.Permalink }}" />
+<meta name="twitter:url" content="{{ .Permalink }}" />
+<meta name="twitter:site" content="@umeruma" />
+<meta name="twitter:creator" content="@umeruma" /> 
+
+{{- if false -}}
+{{ .Hugo.Generator }}
+{{- end -}}
+
+{{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet">
+{{ $mainStyle := resources.Get "css/style.css" }}
+{{ $codeStyle := resources.Get "css/syntax.css" }}
+{{ $style := slice $mainStyle $codeStyle | resources.Concat "css/bundle.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+</head>
+<body>

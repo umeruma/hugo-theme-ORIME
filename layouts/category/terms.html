@@ -1,0 +1,14 @@
+{{ partial "head" . }}
+{{ partial "header" . }}
+
+<main>
+  <h1>カテゴリーリスト</h1>
+  <ol class='article-list'>
+    {{ range .Pages }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a></span></li>
+    {{ end }}
+  </ol>
+</main>
+
+{{ partial "footer" . }}

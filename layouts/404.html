@@ -1,0 +1,23 @@
+{{ partial "head" . }}
+{{ partial "header" . }}
+
+<main id="main">
+  <div>
+    <h1 id="title">これは、あなたが見たいページではありません。</a></h1>
+    <p>あなたがアクセスしたURLに、ページは存在しません。</p>
+    <hr>
+    <p>ブログ記事のURLは基本的に <pre>https://blog.umeru.ma/post/[ハイフンで繋がった英数字]/</pre>という形式になっています。</p>
+    <p><pre>（例）https://blog.umeru.ma/post/pay-money-to-keep-blogging/</pre></p>
+    <p>アクセスしようとしたURLを、再度確認してみてください。</p>
+    <hr>
+    <p>以前は記事が存在したはずなのに、この404ページが表示されている方、ごめんなさい。以下の理由で、あなたの探しているページにアクセスできなかった可能性があります。</p>
+    <ul>
+      <li>URLに誤字があり変更した</li>
+      <li>該当ページに問題があったため、公開を取りやめた</li>
+    </ul>
+    <p>このブログで現在公開されている記事は、<a href="{{ "/post/" }}">こちら</a>で一覧になっています。</p>
+    <p>もし探しているページが見つからずお困りの場合は、<a href="mailto:hello@umeru.ma">メール</a>、またはTwitter <a href="//twitter.com/umeruma/">@umeruma</a>まで。</p>
+  </div>
+</main>
+
+{{ partial "footer" . }}
