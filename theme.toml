@@ -1,21 +1,13 @@
-# theme.toml template for a Hugo theme
-# See https://github.com/gohugoio/hugoThemes#themetoml for an example
-
 name = "ORIME"
 license = ""
 licenselink = ""
 description = ""
-homepage = "http://umeru.ma/"
+homepage = "https://blog.umeru.ma/"
 tags = []
 features = []
 min_version = "0.41"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "umeruma"
+  homepage = "https://umeru.ma/"
 
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
