@@ -1,5 +1,5 @@
 /*!
-ORIME http://github.com/umeruma/ORIME
+ORIME
 */
 :root {
   --color-bg: hsl(0, 0%, 90%);
@@ -26,6 +26,7 @@ html {
   font-size: 10px;
   background-color: var(--color-bg);
   overflow-y: scroll;
+  min-width: 300px;
 }
 
 body {
@@ -77,28 +78,54 @@ li ol {
   padding-left: 1.7em;
 }
 
-body header nav {
+body>header {
   max-width: var(--colomn-width);
-  margin: 2rem auto 0;
+  margin: 3rem auto 0;
+  position: relative;
 }
 
-body header nav a:visited {
+body>header h1 {
+  display: inline-block;
+  position: relative;
+  font-family: var(--font-sans-condensed);
+  font-size: 2.8rem;
+  line-height: 1.4;
+  margin: 0;
+  z-index: 11;
+}
+body>header h1 a {
+  border-bottom: none;
+  display: block;
+}
+body>header nav {
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+body>header nav a:visited {
   border-bottom: var(--color-main) 0.1em solid;
 }
 
-body header ul {
+body>header ul {
   display: flex;
+  justify-content: flex-end;
   flex-wrap: wrap;
+  margin: 0;
 }
 
-body header ul li {
+body>header ul li {
   font-family: var(--font-sans-condensed);
   font-weight: 700;
   text-decoration: none;
   display: block;
   color: var(--color-main);
   font-size: 2rem;
-  margin-right: 2rem;
+  margin-left: 1.6rem;
 }
 
 h1,
@@ -108,12 +135,13 @@ h4,
 h5,
 h6 {
   font-family: var(--font-sans);
-  line-height: 1.1;
+  line-height: 1.3;
 }
 
 h1 {
   font-weight: 600;
   margin: 3rem 0 1rem;
+  font-size: 2.8rem;
 }
 
 h2,
