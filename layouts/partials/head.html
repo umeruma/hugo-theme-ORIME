@@ -51,5 +51,6 @@
 {{ $codeStyle := resources.Get "css/syntax.css" }}
 {{ $style := slice $mainStyle $codeStyle | resources.Concat "css/bundle.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
