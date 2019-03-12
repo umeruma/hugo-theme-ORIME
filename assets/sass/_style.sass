@@ -62,6 +62,7 @@ li
   ul, ol
     padding-left: 1.7em
 
+
 body > header
   max-width: var(--colomn-width)
   margin: 3rem auto 0
@@ -77,6 +78,22 @@ body > header
     a
       border-bottom: none
       display: block
+
+    ruby
+      position: relative
+      rt
+        display: none
+
+    [data-ruby]:before
+      content: attr(data-ruby)
+      position: absolute
+      top: -1em
+      left: 0.1em
+      margin: 0
+      font-size: 0.5em
+      width: 120%
+      letter-spacing: 0.9em
+      
   nav
     margin: 0 auto
     display: block
