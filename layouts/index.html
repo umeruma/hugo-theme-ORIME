@@ -4,7 +4,7 @@
   {{ .Content }}
   <h1>最新の記事</h1>
   <ol class='article-list'>
-    {{ range first 5 (.Pages) }}
+    {{ range first 5 (.Site.RegularPages) }}
     <li>
       <a href="{{ .Permalink }}">{{ .Title }}</a><br /><span class="date">{{ .Date.Format "January 02, 2006" }}</span></li>
     {{ end }}
