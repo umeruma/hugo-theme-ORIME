@@ -21,7 +21,6 @@
 
 html {
   font-size: 10px;
-  font-optical-sizing: auto;
   background-color: var(--color-bg);
   overflow-y: scroll;
   min-width: 300px;
@@ -29,8 +28,12 @@ html {
 
 body {
   font-family: var(--font-serif);
-  line-height: 2;
+  font-feature-settings: "palt";
+  font-optical-sizing: auto;
+
   font-size: 1.6rem;
+  line-height: 2;
+  
   color: var(--color-main);
   margin: 1rem 1rem 10rem;
 }
