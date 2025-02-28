@@ -5,7 +5,7 @@
   --color-sub: hsl(0, 0%, 47%);
   --font-serif: 'YuKyokasho', 'Yu Mincho', 'YuMincho', serif;
   --font-sans: 'Helvetica Neue', 'Yu Gothic', 'YuGothic', sans-serif;
-  --font-sans-condensed: 'Open Sans Condensed', Arial, sans-serif;
+  --font-sub: "Playwrite IT Moderna", var(--font-serif);
   --font-code: Courier, Monaco, 'Yu Gothic', 'YoGothic', monospace, sans-serif;
   --colomn-width: 80rem;
 }
@@ -21,6 +21,7 @@
 
 html {
   font-size: 10px;
+  font-optical-sizing: auto;
   background-color: var(--color-bg);
   overflow-y: scroll;
   min-width: 300px;
@@ -41,11 +42,15 @@ body {
 
 a {
   color: var(--color-main);
-  text-decoration: none;
-  border-bottom: var(--color-main) 0.1em solid;
+  /* text-decoration: none; */
+  /* border-bottom: var(--color-main) 0.1em solid; */
 }
 a:visited {
-  border-bottom: var(--color-sub) 0.1em solid;
+  /* border-bottom: var(--color-sub) 0.1em solid; */
+}
+a:hover {
+  color: var(--color-sub);
+  text-decoration: underline;
 }
 
 /* //a.external:after {
@@ -79,7 +84,7 @@ body > header {
 body > header h1 {
   display: inline-block;
   position: relative;
-  font-family: var(--font-sans-condensed);
+  font-family: var(--font-sub);
   font-size: 2.8rem;
   line-height: 1.4;
   margin: 0;
@@ -88,6 +93,7 @@ body > header h1 {
 body > header h1 a {
   border-bottom: none;
   display: block;
+  text-decoration: none;
 }
 body > header h1 ruby rt {
   display: none;
@@ -112,8 +118,12 @@ body > header nav {
   width: 100%;
   z-index: 10;
 }
+body > header nav a {
+  /* border-bottom: var(--color-main) 0.1em solid; */
+  text-decoration: underline;
+}
 body > header nav a:visited {
-  border-bottom: var(--color-main) 0.1em solid;
+  /* border-bottom: var(--color-main) 0.1em solid; */
 }
 @media (max-width: 420px) {
   body > header nav {
@@ -128,12 +138,12 @@ body > header ul {
   margin: 0;
 }
 body > header ul li {
-  font-family: var(--font-sans-condensed);
+  font-family: var(--font-sub);
   /* font-weight: 700; */
   text-decoration: none;
   display: block;
   color: var(--color-main);
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-left: 1.6rem;
 }
 
@@ -179,32 +189,37 @@ blockquote {
 .blog-title {
   font-size: 4rem;
   line-height: 1;
-  font-family: var(--font-sans-condensed);
-  font-weight: 700;
+  font-family: var(--font-sub);
+  font-weight: 400;
 }
 
 .article-list {
   list-style-type: none;
   font-family: var(--font-sans);
-  margin: 3rem 0 0;
+  margin: 5rem 0 0;
   padding: 0;
 }
 .article-list li {
   font-size: 2rem;
   line-height: 1.4;
-  margin-bottom: 2rem;
+  margin-bottom: 3.6rem;
 }
 .article-list a {
   font-weight: 600;
-  color: var(--color-main);
+  color: var(--color-sub);
+  text-decoration: none;
+}
+.article-list a:hover {
+  color: var(--color-sub);
+  text-decoration: underline;
 }
 .article-list a:visited {
-  color: var(--color-sub);
+  color: var(--color-main);
 }
 
 main {
   max-width: var(--colomn-width);
-  margin: 4rem auto 4rem;
+  margin: 9rem auto 4rem;
 }
 
 article header {
@@ -212,17 +227,21 @@ article header {
 }
 
 .date {
-  font-family: var(--font-sans-condensed);
-  font-size: 1.6rem;
+  font-family: var(--font-sub);
+  font-size: 1.3rem;
   line-height: 1;
   /* // color: #999; */
 }
 
 .category {
   color: darkcyan;
-  border-bottom: darkcyan 0.1em solid;
-  font-family: var(--font-sans-condensed);
-  font-size: 1.6rem;
+  /* border-bottom: darkcyan 0.1em solid; */
+  padding: 0.1em 0.8rem;
+  border-radius: 0.2em;
+  border: darkcyan 1px solid;
+  font-family: var(--font-sub);
+  font-size: 1.3rem;
+  text-decoration: none !important;
 }
 
 figure {
@@ -322,7 +341,7 @@ hr {
   font-size: 2rem;
 }
 .nav-open > a {
-  font-family: var(--font-sans-condensed);
+  font-family: var(--font-sub);
   font-weight: 300;
   display: none;
   text-decoration: none;
@@ -335,7 +354,7 @@ hr {
 }
 
 .nav-float {
-  font-family: var(--font-sans-condensed);
+  font-family: var(--font-sub);
   font-weight: 700;
   line-height: 2rem;
   font-size: 2rem;
