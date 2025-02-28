@@ -3,8 +3,9 @@
   --color-bg-weak: hsl(0, 0%, 93%);
   --color-main: hsl(0, 0%, 30%);
   --color-sub: hsl(207, 38.80%, 16.70%);
-  --font-serif: 'YuKyokasho', 'Yu Mincho', 'YuMincho', serif;
-  --font-sans: 'Helvetica Neue', 'Yu Gothic', 'YuGothic', sans-serif;
+  /* --font-serif: 'Noto Serif JP', serif; */
+  --font-serif: 'Hina Mincho', serif;
+  --font-sans: 'SF Pro JP','SF Pro Display','SF Pro Icons','Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ','Meiryo','ＭＳ Ｐゴシック','Helvetica Neue','Helvetica','Arial',sans-serif;
   --font-sub: 'Caveat', cursive, var(--font-serif);
   --font-code: Courier, Monaco, 'Yu Gothic', 'YoGothic', monospace, sans-serif;
   --colomn-width: 72rem;
@@ -27,12 +28,13 @@ html {
 }
 
 body {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-feature-settings: "palt";
   font-optical-sizing: auto;
 
   font-size: 1.6rem;
   line-height: 2;
+  letter-spacing: .012em;
   
   color: var(--color-main);
   margin: 1rem 1rem 10rem;
