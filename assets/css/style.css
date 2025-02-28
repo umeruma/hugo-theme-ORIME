@@ -1,8 +1,8 @@
 :root {
   --color-bg: hsl(0, 0%, 90%);
   --color-bg-weak: hsl(0, 0%, 93%);
-  --color-main: hsl(0, 0%, 20%);
-  --color-sub: hsl(0, 0%, 47%);
+  --color-main: hsl(0, 0%, 30%);
+  --color-sub: hsl(207, 38.80%, 16.70%);
   --font-serif: 'YuKyokasho', 'Yu Mincho', 'YuMincho', serif;
   --font-sans: 'Helvetica Neue', 'Yu Gothic', 'YuGothic', sans-serif;
   --font-sub: "Playwrite IT Moderna", var(--font-serif);
