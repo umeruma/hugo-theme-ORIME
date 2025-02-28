@@ -129,7 +129,7 @@ body > header ul {
 }
 body > header ul li {
   font-family: var(--font-sans-condensed);
-  font-weight: 700;
+  /* font-weight: 700; */
   text-decoration: none;
   display: block;
   color: var(--color-main);
@@ -379,11 +379,12 @@ hr {
 }
 
 .nav-close a {
+  display: block;
   margin-top: 5rem !important;
   font-weight: 300;
   font-size: 2rem;
   text-decoration: none;
-  padding: 0.3em 1.5em;
+  padding: 0.3em 1.5em !important;
   border-radius: 0.3em;
   border: var(--color-bg) 0.1em solid;
 }

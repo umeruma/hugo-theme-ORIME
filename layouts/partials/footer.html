@@ -1,10 +1,13 @@
 <div id="navFloat" class="nav-float">
   <nav>
     <ul>
-      <li><a href="/about/">ABOUT</a></li>
-      <li><a href="/post/">ARCHIVES</a></li>
-      <li><a href="/">HOME</a></li>
-      <li class="nav-close"><a href="#" id="closeNav">CLOSE MENU</a></li>
+      <li><a href="/about/">About</a></li>
+      {{ $tags := site.GetPage "/category" }}
+      {{ range $tags.Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+      <li><a href="/">Home</a></li>
+      <li class="nav-close"><a href="#" id="closeNav">CLOSE</a></li>
     </ul>
   </nav>
 </div>

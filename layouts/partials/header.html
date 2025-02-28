@@ -2,9 +2,11 @@
   <h1><a href="/"><ruby data-ruby="{{ .Site.Params.Info.titleRuby }}">{{ .Site.Title }}<rt>{{ .Site.Params.Info.titleRuby }}</rt></ruby></a></h1>
   <nav>
     <ul>
-      <li><a href="/">HOME</a></li>
-      <li><a href="/post/">ARCHIVES</a></li>
-      <li><a href="/about/">ABOUT</a></li>
+      {{ $tags := site.GetPage "/category" }}
+      {{ range $tags.Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+      <li><a href="/about/">About</a></li>
     </ul>
   </nav>
 </header>
