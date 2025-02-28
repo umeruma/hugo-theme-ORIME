@@ -48,10 +48,9 @@
 {{ end -}}
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet">
-{{ $sassOptions := (dict "targetPath" "css/bundle.css" "outputStyle" "compressed" "enableSourceMap" false) }}
-{{ $sass := resources.Get "sass/bundle.sass" }}
-{{ $style := $sass | resources.ToCSS $sassOptions | fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ with resources.Get "css/bundle.css" | postCSS }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
