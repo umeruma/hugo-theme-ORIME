@@ -7,7 +7,7 @@
   --font-sans: 'Helvetica Neue', 'Yu Gothic', 'YuGothic', sans-serif;
   --font-sub: "Playwrite IT Moderna", var(--font-serif);
   --font-code: Courier, Monaco, 'Yu Gothic', 'YoGothic', monospace, sans-serif;
-  --colomn-width: 80rem;
+  --colomn-width: 72rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,7 +29,7 @@ html {
 
 body {
   font-family: var(--font-serif);
-  line-height: 1.71;
+  line-height: 2;
   font-size: 1.6rem;
   color: var(--color-main);
   margin: 1rem 1rem 10rem;
