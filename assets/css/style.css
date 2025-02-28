@@ -5,7 +5,7 @@
   --color-sub: hsl(207, 38.80%, 16.70%);
   --font-serif: 'YuKyokasho', 'Yu Mincho', 'YuMincho', serif;
   --font-sans: 'Helvetica Neue', 'Yu Gothic', 'YuGothic', sans-serif;
-  --font-sub: "Playwrite IT Moderna", var(--font-serif);
+  --font-sub: 'Caveat', cursive, var(--font-serif);
   --font-code: Courier, Monaco, 'Yu Gothic', 'YoGothic', monospace, sans-serif;
   --colomn-width: 72rem;
 }
@@ -88,7 +88,7 @@ body > header h1 {
   display: inline-block;
   position: relative;
   font-family: var(--font-sub);
-  font-size: 2.8rem;
+  font-size: 4rem;
   line-height: 1.4;
   margin: 0;
   z-index: 11;
@@ -146,7 +146,7 @@ body > header ul li {
   text-decoration: none;
   display: block;
   color: var(--color-main);
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   margin-left: 1.6rem;
 }
 
@@ -231,7 +231,7 @@ article header {
 
 .date {
   font-family: var(--font-sub);
-  font-size: 1.3rem;
+  font-size: 2rem;
   line-height: 1;
   /* // color: #999; */
 }
@@ -239,11 +239,11 @@ article header {
 .category {
   color: darkcyan;
   /* border-bottom: darkcyan 0.1em solid; */
-  padding: 0.1em 0.8rem;
+  padding: 0.1em 1.2rem;
   border-radius: 0.2em;
   border: darkcyan 1px solid;
   font-family: var(--font-sub);
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   text-decoration: none !important;
 }
 
@@ -397,7 +397,7 @@ hr {
   padding: 0.5em 0;
   font-size: 2.2rem;
   display: inline-block;
-  border-bottom: var(--color-bg) 0.1em solid;
+  /* border-bottom: var(--color-bg) 0.1em solid; */
 }
 
 .nav-close a {
