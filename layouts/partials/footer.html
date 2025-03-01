@@ -11,20 +11,28 @@
     </ul>
   </nav>
 </div>
-<div class="nav-open"><a href="#" id="openNav">Menu</a></div>
+
+<!-- switch for iOS Haptic Feedback -->
+<label class="nav-open" id="navToggleSwitch">
+  <a href="#" id="openNav">Menu</a>
+  <input type="checkbox" switch>
+</label>
 
 <script>
-  let menu = document.getElementById("navFloat");
-  let btnMenuOpen = document.getElementById("openNav");
-  let btnMenuClose = document.getElementById("closeNav");
+  const menu = document.getElementById("navFloat");
+  const btnMenuOpen = document.getElementById("openNav");
+  const btnMenuClose = document.getElementById("closeNav");
+  const navToggleSwitch = document.getElementById("navToggleSwitch");
 
   let openMenu = function (event) {
     event.preventDefault();
     menu.classList.add('nav-float-active');
+    navToggleSwitch.click()
   }
   let closeMenu = function (event) {
     event.preventDefault();
     menu.classList.remove('nav-float-active');
+    navToggleSwitch.click()
   }
 
   // btnMenuOpen.addEventListener('touchstart', openMenu);
