@@ -2,12 +2,7 @@
 {{ partial "header" . }}
 <main>
   {{ .Content }}
-  <ol class='article-list'>
-    {{ range .Site.RegularPages }}
-    <li>
-      <a href="{{ .Permalink }}">{{ .Title }}</a><br /><span class="date">{{ .Date.Format "Jan 02, 2006" }}</span></li>
-    {{ end }}
-  </ol>
+  {{ partial "article-list" . }}
 </main>
 
 {{ partial "footer" . }}
