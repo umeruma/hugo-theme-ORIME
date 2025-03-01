@@ -14,7 +14,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: hsl(15deg, 8.33%, 9.41%);
-    --color-bg-weak: hsl(15deg, 8.33%, 19.41%);
+    --color-bg-weak: hsl(15deg, 8.33%, 15.41%);
     --color-main: hsl(12deg, 24.1%, 71.6%);
     --color-sub: hsl(12deg, 24.1%, 91.6%);
   }
@@ -203,23 +203,46 @@ blockquote {
   font-family: var(--font-sans);
   margin: 5rem 0 0;
   padding: 0;
-}
-.article-list li {
-  font-size: 2rem;
-  line-height: 1.4;
-  margin-bottom: 3.6rem;
-}
-.article-list a {
-  font-weight: 600;
-  color: var(--color-sub);
-  text-decoration: none;
-}
-.article-list a:hover {
-  color: var(--color-sub);
-  text-decoration: underline;
-}
-.article-list a:visited {
-  color: var(--color-main);
+  
+  li {
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 3.6rem;
+  }
+  a {
+    font-weight: 600;
+    color: var(--color-sub);
+    text-decoration: none;
+    display: block;
+    @media (max-width: 420px) {
+      border: var(--color-bg-weak) 1px solid;
+      padding: 2rem 1.5rem;
+      border-radius: 1rem;
+    }
+  }
+  a:hover {
+    color: var(--color-sub);
+    text-decoration: none;
+
+    .article-list_title {
+      text-decoration: underline;
+    }
+  }
+  a:visited {
+    color: var(--color-main);
+
+    @media (max-width: 420px) {
+      border: var(--color-bg-weak) 1px solid;
+    }
+
+    .article-list_title {
+      text-decoration: underline;
+    }
+  }
+
+  > .date {
+    text-decoration: none;
+  }
 }
 
 main {
@@ -359,7 +382,7 @@ hr {
     position: relative;
     z-index: 1;
   }
-  
+
   input {
     opacity: 0;
     position: absolute;
