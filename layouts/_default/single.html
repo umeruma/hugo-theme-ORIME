@@ -26,7 +26,7 @@
     {{ end }}
     {{ $.Scratch.Get "content" }}
     {{ with .Params.category }}
-    <p>{{ range . }} <a class="category" href="/category/{{ . | urlize }}/">{{ . }}</a>{{ end }}</p>{{ end }}
+    <p>{{ range . }} <a class="category" href="/category/{{ . | urlize }}/" data-cate="{{ . }}">{{ . }}</a>{{ end }}</p>{{ end }}
     <p><span class="date">{{ $modDate := (time .Page.Lastmod) }} 
      {{- if $modDate.After $postedDate -}}Updated: {{ $modDate.Format "January 02, 2006"}}
      {{- end -}}</span></p>

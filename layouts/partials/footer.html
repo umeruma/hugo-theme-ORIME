@@ -4,7 +4,7 @@
       <li><a href="/about/">About</a></li>
       {{ $tags := site.GetPage "/category" }}
       {{ range $tags.Pages }}
-      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      <li><a href="{{ .RelPermalink }}" data-nav="{{ .LinkTitle }}">{{ .LinkTitle }}</a></li>
       {{ end }}
       <li><a href="/">Home</a></li>
       <li class="nav-close"><a href="#" id="closeNav">Close</a></li>

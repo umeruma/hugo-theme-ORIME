@@ -137,6 +137,15 @@ body > header nav a:visited {
   }
 }
 
+nav a {
+  &[data-nav="Vibes"] {
+    text-decoration-color: darkseagreen !important;
+  }
+  &[data-nav="Ctrl"] {
+    text-decoration-color: darksalmon !important;
+  }
+}
+
 body > header ul {
   display: flex;
   justify-content: flex-end;
@@ -244,6 +253,12 @@ blockquote {
   > .date {
     text-decoration: none;
   }
+  [data-cate="Vibes"] {
+    color: darkseagreen; /* Added styling for category */
+  }
+  [data-cate="Ctrl"] {
+    color: darksalmon; /* Added styling for category */
+  }
 }
 
 main {
@@ -263,14 +278,21 @@ article header {
 }
 
 .category {
-  color: darkcyan;
-  /* border-bottom: darkcyan 0.1em solid; */
+  /* border-bottom: darkseagreen 0.1em solid; */
   padding: 0.1em 1.2rem;
   border-radius: 0.2em;
-  border: darkcyan 1px solid;
   font-family: var(--font-sub);
   font-size: 1.8rem;
   text-decoration: none !important;
+
+  &[data-cate="Vibes"] {
+    color: darkseagreen;
+    border: darkseagreen 1px solid;
+  }
+  &[data-cate="Ctrl"] {
+    color: darksalmon;
+    border: darksalmon 1px solid;
+  }
 }
 
 figure {
