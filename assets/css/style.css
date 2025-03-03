@@ -305,19 +305,21 @@ code {
   border: var(--color-main) 0.01rem solid;
   border-radius: 0.2em;
   margin: 0 0.1em;
+
+  word-wrap: break-word;
+  /* white-space: pre-wrap; */
+  word-break: break-word;
 }
 
 pre {
   padding: 1rem;
   border-radius: 0.4rem;
-}
-pre > code {
-  border: none;
-  /* color: #333; */
-  padding: 1rem 0 1rem;
-  word-wrap: break-word;
-  /* white-space: pre-wrap; */
-  word-break: break-word;
+
+  & > code {
+    border: none;
+    /* color: #333; */
+    padding: 1rem 0 1rem;
+  }
 }
 
 img, iframe {
