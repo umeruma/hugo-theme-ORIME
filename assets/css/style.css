@@ -49,6 +49,7 @@ a {
   color: var(--color-main);
   /* text-decoration: none; */
   /* border-bottom: var(--color-main) 0.1em solid; */
+  word-break: break-word;
 }
 a:visited {
   /* border-bottom: var(--color-sub) 0.1em solid; */
