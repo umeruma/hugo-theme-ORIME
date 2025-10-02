@@ -353,6 +353,7 @@ img, iframe {
 
 img {
   display: block;
+  border-radius: 1em;
 }
 
 .mark {

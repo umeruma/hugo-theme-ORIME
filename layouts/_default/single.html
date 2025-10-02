@@ -10,20 +10,7 @@
       {{- $postedDate := (time .Date).Add 1800000000000 -}}
       <span class="date">{{ .Date.Format "January 02, 2006" }}</span>
     </header>
-    {{ $images := findRE "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" /></p>" .Content }}
     {{ $.Scratch.Set "content" .Content | safeHTML}}
-    {{ range $images }}
-      {{ $imgPath := . | replaceRE "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" /></p>" "$1" }}
-      {{ $originImgPath := printf "static%s" $imgPath }}
-      {{ $altStr := . | replaceRE "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" /></p>" "$2" }}
-      {{ $img := imageConfig $originImgPath }}
-
-      {{ $reAltOut := printf "<figure><div style=\"max-width: %d; max-height: %d;\"><div style=\"padding-bottom: %f&#037;;\"></div><img src=\"%s\" alt=\"%s\"></div><figcaption>%s</figcaption></figure>" $img.Width $img.Height (mul (div (float $img.Height) $img.Width) 100.0) $imgPath $altStr $altStr}}
-
-      {{ $altContent := $.Scratch.Get "content"}}
-      {{ $altContent := replace $altContent . $reAltOut | safeHTML}}
-      {{ $.Scratch.Set "content" $altContent}}
-    {{ end }}
     {{ $.Scratch.Get "content" }}
     {{ with .Params.category }}
     <p>{{ range . }} <a class="category" href="/category/{{ . | urlize }}/" data-cate="{{ . }}">{{ . }}</a>{{ end }}</p>{{ end }}

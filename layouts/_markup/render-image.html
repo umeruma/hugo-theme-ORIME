@@ -1,0 +1,13 @@
+{{- $image := "" -}}
+{{- if hasPrefix .Destination "http" -}}
+  {{- $image = resources.GetRemote .Destination -}}
+{{- else -}}
+  {{- $image = .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) -}}
+{{- end -}}
+
+<img src="{{ .Destination | safeURL }}"
+  {{- with $image }} style="aspect-ratio: {{ $image.Width }} / {{ $image.Height }};"{{ end -}}
+  {{- with .PlainText }} alt="{{ . }}"{{ end -}}
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+>
+{{- /* chomp trailing newline */ -}}
