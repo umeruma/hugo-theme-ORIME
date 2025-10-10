@@ -50,6 +50,8 @@ a {
   /* text-decoration: none; */
   /* border-bottom: var(--color-main) 0.1em solid; */
   word-break: break-word;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
 }
 a:visited {
   /* border-bottom: var(--color-sub) 0.1em solid; */
@@ -57,6 +59,7 @@ a:visited {
 a:hover {
   color: var(--color-sub);
   text-decoration: underline;
+  text-decoration-style: wavy;
 }
 
 /* //a.external:after {
