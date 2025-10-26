@@ -8,15 +8,17 @@
       </h1>
       <!-- dataに指定されている日時よりも、30分以上後にGIT更新されていたら -->
       {{- $postedDate := (time .Date).Add 1800000000000 -}}
-      <span class="date">{{ .Date.Format "January 02, 2006" }}</span>
+      <span class="date">{{ .Date.Format "2006-01-02" }}</span>
     </header>
     {{ $.Scratch.Set "content" .Content | safeHTML}}
     {{ $.Scratch.Get "content" }}
     {{ with .Params.category }}
     <p>{{ range . }} <a class="category" href="/category/{{ . | urlize }}/" data-cate="{{ . }}">{{ . }}</a>{{ end }}</p>{{ end }}
-    <p><span class="date">{{ $modDate := (time .Page.Lastmod) }} 
-     {{- if $modDate.After $postedDate -}}Updated: {{ $modDate.Format "January 02, 2006"}}
-     {{- end -}}</span></p>
+    <p><span class="date">
+      {{ $modDate := (time .Page.Lastmod) }} 
+      {{- if $modDate.After $postedDate -}}Updated: {{ $modDate.Format "2006-01-02"}}
+     {{- end -}}
+    </span></p>
   </article>
 </main> 
 {{ partial "footer" . }}

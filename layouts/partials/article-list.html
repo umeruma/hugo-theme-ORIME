@@ -5,7 +5,7 @@
     <a href="{{ .Permalink }}">
       <span class="article-list_title">{{ .Title }}</span>
       <br />
-      <span class="date">{{ .Date.Format "Jan 02, 2006" }} • <span data-cate="{{ index .Params.category 0 }}">{{ index .Params.category 0 }}</span></span> 
+      <span class="date">{{ .Date.Format "2006-01-02" }} • <span data-cate="{{ index .Params.category 0 }}">{{ index .Params.category 0 }}</span></span> 
     </a>
   </li>
   {{ end }}
