@@ -141,7 +141,7 @@ body > header nav a:visited {
 }
 
 nav a {
-  &[data-nav="Vibes"] {
+  &[data-nav="Feels"] {
     text-decoration-color: darkseagreen !important;
   }
   &[data-nav="Ctrl"] {
@@ -256,7 +256,7 @@ blockquote {
   > .date {
     text-decoration: none;
   }
-  [data-cate="Vibes"] {
+  [data-cate="Feels"] {
     color: darkseagreen; /* Added styling for category */
   }
   [data-cate="Ctrl"] {
@@ -288,7 +288,7 @@ article header {
   font-size: 1.8rem;
   text-decoration: none !important;
 
-  &[data-cate="Vibes"] {
+  &[data-cate="Feels"] {
     color: darkseagreen;
     border: darkseagreen 1px solid;
   }
