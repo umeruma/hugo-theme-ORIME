@@ -52,7 +52,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet"> -->
 <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
-{{ with resources.Get "css/bundle.css" | postCSS }}
+{{ $style := resources.Get "css/style.css" }}
+{{ $syntax := resources.Get "css/syntax.css" }}
+{{ with (slice $style $syntax | resources.Concat "css/bundle.css" | postCSS) }}
 <link rel="stylesheet" href="{{ .RelPermalink }}">
 {{ end }}
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">

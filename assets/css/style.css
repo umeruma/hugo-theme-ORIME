@@ -142,7 +142,7 @@ body > header nav a:visited {
 
 nav a {
   &[data-cate="Shelf"] {
-    text-decoration-color: cornflowerblue !important;
+    text-decoration-color: wheat !important;
   }
   &[data-nav="Feels"] {
     text-decoration-color: darkseagreen !important;
@@ -177,19 +177,64 @@ h1 {
   font-weight: 600;
   margin: 3rem 0 1rem;
   font-size: 2.8rem;
+  position: relative;
 }
 
 h2, h3, h4, h5, h6 {
   margin: 6rem 0 2rem;
   font-weight: 400;
+
+  position: relative;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.4rem;
+  margin-top: 3em;
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 2rem;
+  margin-top: 2.4em;
+}
+
+article {
+  header {
+    margin-bottom: 4rem;
+  }
+  h1, h2, h3 {
+    &:after {
+      display: block;
+      position: absolute;
+      left: -1.2rem;
+      top: 50%;
+      transform: translateX(-100%) translateY(-50%);
+      font-size: 2.0rem;
+      line-height: 100%;
+      letter-spacing: -0.1em;
+      color: var(--color-main);
+      /* font-family: var(--font-sub); */
+      opacity: 0.2;
+    }
+  }
+  h1 {
+    &:after {
+      content: '#';
+    }
+  }
+  h2 {
+    &:before {
+      content: '》';
+      margin-right: 0.4em;
+    }
+    &:after {
+      content: '##';
+    }
+  }
+  h3 {
+    &:after {
+      content: '###';
+    }
+  }
 }
 
 strong {
@@ -260,7 +305,7 @@ blockquote {
     text-decoration: none;
   }
   [data-cate="Shelf"] {
-    color: cornflowerblue; /* Added styling for category */
+    color: wheat; /* Added styling for category */
   }
   [data-cate="Feels"] {
     color: darkseagreen; /* Added styling for category */
@@ -276,7 +321,7 @@ main {
 }
 
 article header {
-  margin: 0 0 2rem;
+  margin: 0 0 8rem;
 }
 
 .date {
@@ -295,8 +340,8 @@ article header {
   text-decoration: none !important;
 
   &[data-cate="Shelf"] {
-    color: cornflowerblue;
-    border: cornflowerblue 1px solid;
+    color: wheat;
+    border: wheat 1px solid;
   }
   &[data-cate="Feels"] {
     color: darkseagreen;
@@ -309,7 +354,7 @@ article header {
 }
 
 figure {
-  margin: 0 0 1rem;
+  margin: 2rem 0 1rem;
 }
 figure > div {
   position: relative;
@@ -319,20 +364,32 @@ figure > div {
 }
 figure img, figure video {
   display: block;
-  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   margin: auto;
+  width: calc(100% + 8rem * 2);
+  max-width: calc(100% + 8rem * 2);
+  margin-left: -8rem;
+  /* height: 100%; */
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+
+  transition: border-radius 0.3s ease;
+  
+  @media (max-width: 928px) {
+    /* margin-left: -1rem; */
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc((100% - 100vw) / 2);
+    /* left: 50%; */
+    border-radius: 0;
+  }
 }
 
 figcaption {
   font-family: var(--font-sans);
   font-size: 1.2rem;
-  color: var(--color-sub);
+  /* color: var(--color-sub); */
 }
 
 code {
